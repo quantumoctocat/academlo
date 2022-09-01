@@ -1,0 +1,228 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root {
+	--main-color: rgb(7, 109, 104);
+	--footer-color: rgb(60, 170, 170);
+}
+
+body {
+	color: #333;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.75;
+	letter-spacing: 0.1em;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 6px 0;
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.header {
+		padding: 10px 0;
+	}
+}
+
+.logo {
+	color: var(--main-color);
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+	.logo {
+		font-size: 32px;
+	}
+}
+
+.my-name {
+	font-size: 1rem;
+	margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+	.my-name {
+		font-size: 1rem;
+	}
+}
+
+.footer {
+	text-align: center;
+	padding: 16px 0;
+	background: var(--footer-color);
+}
+@media screen and (min-width: 768px) {
+	.footer {
+		padding: 24px 0;
+	}
+}
+
+.top-container {
+	max-width: 1080px;
+	width: 92%;
+	margin: 0 auto;
+	padding-bottom: 64px;
+	background-color: #eee;
+}
+
+@media screen and (min-width: 1080px) {
+	.top-container {
+		display: flex;
+		padding-bottom: 80px;
+	}
+}
+
+.main {
+	width: 100%;
+	flex-shrink: 0;
+}
+
+@media screen and (min-width: 1080px) {
+	.main {
+		width: 720px;
+	}
+}
+
+.box {
+	padding-bottom: 32px;
+	border-bottom: 1px solid #ccc;
+}
+
+/* Esto de ":not" es para que se aplique a todo, menos a ":first-child" */
+.box:not(:first-child) {
+	margin-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+	.box {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.post-box-wrapper {
+	width: 100%;
+	display: block;
+	flex-shrink: 0;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+@media screen and (min-width: 768px) {
+	.post-box-wrapper {
+		width: 344px;
+	}
+}
+
+.text-background {
+	box-shadow: 10px 0 0px 0px #edc43083, -10px 0 0px 0px #edc43083;
+}
+
+.post-txts {
+	margin-top: 8px;
+	vertical-align: top;
+}
+
+@media screen and (min-width: 768px) {
+	.post-txts {
+		margin-top: 0;
+		margin-left: 16px;
+		vertical-align: top;
+	}
+}
+
+.post-title {
+	font-size: 1.7rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.post-content {
+	color: rgb(11, 111, 124);
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.fa-brands {
+	font-size: 2rem;
+	color: rgb(228, 81, 100);
+}
+
+@media screen and (min-width: 768px) {
+	.post-content {
+		margin-top: 16px;
+	}
+}
+
+.post-btn-wrapper {
+	margin-top: 40px;
+	text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+	.post-btn-wrapper {
+		margin-top: 16px;
+	}
+}
+
+.post-btn {
+	color: var(--main-color);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.aside {
+	margin-top: 64px;
+	display: flex;
+	gap: 40px;
+	flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+	.aside {
+		width: 100%;
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.aside {
+		margin-top: 0;
+		margin-left: 40px;
+		flex-direction: column;
+	}
+}
+
+.aside-box {
+	width: 100%;
+}
+
+.aside-title {
+	color: rgb(228, 81, 100);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.bnr-item {
+	display: block;
+}
+
+.bnr-item:not(:first-child) {
+	margin-top: 16px;
+}
+
+.contact {
+	padding-bottom: 64px;
+}
