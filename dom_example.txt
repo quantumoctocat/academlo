@@ -1,0 +1,71 @@
+[19:45, 2/9/2022] Armando Estañol: function createElement(elementObject){
+                                if(elementObject.hasOwnProperty("type")){
+                                    const properties = Object.keys(elementObject);
+                                    const element = document.createElement(elementObject.type);
+
+                                    for(var property = 0; property < properties.length; property++){
+                                        switch(properties[property]){
+                                            case "type":
+                                                break;
+                                            case "text":
+                                                element.appendChild(document.createTextNode(elementObject[properties[property]]));
+                                                break;
+                                            case "classes":
+                                                const classes = elementObject[properties[property]];
+                
+                                                for(var classItem=0;classItem<classes.length;classItem++){
+                                                    element.classList.add(classes[classItem]);
+                                                }
+                                                break;
+                                            case "attributes":
+                                                const attributes = elementObject[properties[property]];
+                                                const attributeKeys = Object.keys(attributes);
+
+                                                for(var attribute=0;attribute<attributeKeys.length;attribute++){
+                                                    element.setAttribute(attributeKeys[attribute],attributes[attributeKeys[attribute]]);
+                                                }
+                                                break;
+                                            case "events":
+                                                const events = elementObject[properties[property]];
+                                                const eventKeys = Object.keys(events);
+
+                                                for(var event=0;event<eventKeys.length;event++){
+                                                    element.addEventListener(eventKeys[event],events[eventKeys[event]]);
+                                                }
+                                                break;
+                                            case "elements":
+                                                const elements = elementObject[properties[property]];
+
+                                                for(var elementItem=0;elementItem<elements.length;elementItem++){
+                                                    element.appendChild(createElement(elements[elementItem]));
+                                                }
+                                                break;
+                                            case "handle":
+                                                elementObject[properties[property]].dom = (new DocumentFragment()).appendChild(element);
+                                                break;
+                                        }
+                                    }
+
+                                    return element;
+                                }
+                            }
+[19:46, 2/9/2022] A E: Básicamente se usa así:
+[19:46, 2/9/2022] Sergei Armando: 😯
+[19:48, 2/9/2022] A E: element.appendChild(createElement({
+                                        "type":"div",
+                                        "classes":['article'],
+                                        "events":{
+                                            "click":function(){
+                                                window.open("https://someURL","_blank");
+                                            },
+                                        },
+                                        "elements":[
+                                            {
+                                                "type":"div",
+                                                "classes":['container'],
+                                                "elements":[
+                          …
+[19:49, 2/9/2022] A E: Como verás, hacer una estructura DOM en código se vuelve muy sencillo y prácticamente es como un emmet.
+[19:50, 2/9/2022] A E: Si lo ejecutas, sólo necesitas declarar "element" como un objeto de tipo DOM o asignar a una variable el resultado de createElement (Le puse el mismo nombre que la función de document).
+[19:50, 2/9/2022] Sergei Armando: Como 1 emmet... OK 🤔
+[19:51, 2/9/2022] A E: Y la variable imageHandle es de tipo objeto al que se le agrega una llave "dom" con un valor igual a la hoja del árbol, o sea ese elemento DOM en particular. Por si después lo quieres manipular directamente y no tengas que perder ciclos de procesamiento buscando el elemento DOM con querySelector.

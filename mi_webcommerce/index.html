@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi Webcommerce</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="four columns">
+          <img src="images/academlo_logo.png" id="logo">
+        </div>
+        <div class="two columns u-pull-right">
+          <ul>
+            <li class="submenu">
+              <img src="images/cart.png" id="img-carrito">
+              <div id="carrito">
+                <table id="lista-carrito" class="u-pull-right">
+                  <tbody></tbody>
+                </table>
+                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="lista-productos">
+    <h1 id="encabezado__productos">Productos</h1>
+
+    <div class="productos__container">
+
+      <div class="producto__item">
+        <div class="producto__card">
+          <div class="info__card">
+            <h4>Producto 001</h4>
+            <img src="images/001.jpg" width="125" height="125">
+            <p><span class="price">$37.75</span> <span class="discount">$27.50</span>  </p>
+            <a href="#" class="agregar-carrito" data-id="1"><i class="fa fa-cart-plus"></i>&nbsp;  AGREGAR AL CARRITO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto__item">
+        <div class="producto__card">
+          <div class="info__card">
+            <h4>Producto 002</h4>
+            <img src="images/002.jpg" width="125" height="125">
+            <p><span class="price">$37.75</span> <span class="discount">$27.50</span>  </p>
+            <a href="#" class="agregar-carrito" data-id="2"><i class="fa fa-cart-plus"></i>&nbsp;  AGREGAR AL CARRITO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto__item">
+        <div class="producto__card">
+          <div class="info__card">
+            <h4>Producto 003</h4>
+            <img src="images/003.jpg" width="125" height="125">
+            <p><span class="price">$37.75</span> <span class="discount">$27.50</span>  </p>
+            <a href="#" class="agregar-carrito" data-id="3"><i class="fa fa-cart-plus"></i>&nbsp;  AGREGAR AL CARRITO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto__item">
+        <div class="producto__card">
+          <div class="info__card">
+            <h4>Producto 004</h4>
+            <img src="images/004.jpg" width="125" height="125">
+            <p><span class="price">$37.75</span> <span class="discount">$27.50</span>  </p>
+            <a href="#" class="agregar-carrito" data-id="4"><i class="fa fa-cart-plus"></i>&nbsp;  AGREGAR AL CARRITO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="producto__item">
+        <div class="producto__card">
+          <div class="info__card">
+            <h4>Producto 005</h4>
+            <img src="images/005.jpg" width="125" height="125">
+            <p><span class="price">$37.75</span> <span class="discount">$27.50</span>  </p>
+            <a href="#" class="agregar-carrito" data-id="5"><i class="fa fa-cart-plus"></i>&nbsp;  AGREGAR AL CARRITO</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
