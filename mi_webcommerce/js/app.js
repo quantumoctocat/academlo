@@ -1,9 +1,20 @@
+// let pageReadyCheck = setInterval(() => { // Code that runs once the page is fully loaded
+//   if(document.readyState === 'complete'){
+//       clearInterval(pageReadyCheck);
+//       const carrito = document.getElementById('carrito');
+//       const productos = document.getElementById('lista-productos');
+//       const listaProductos = document.querySelector('#lista-carrito tbody');
+//       const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+//       cargarEventListeners();
+//   }
+// },100);
+
 const carrito = document.getElementById('carrito');
 const productos = document.getElementById('lista-productos');
 const listaProductos = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
-
 cargarEventListeners();
+
 function cargarEventListeners() {
   productos.addEventListener('click', comprarProducto);
   carrito.addEventListener('click', eliminarProducto);
@@ -85,10 +96,8 @@ function obtenerProductosLocalStorage() {
 
 function leerLocalStorage() {
   let productosLS;
-  let suma;
   productosLS = obtenerProductosLocalStorage();
   productosLS.forEach(function(producto){
-    suma += producto.precio;
     const row = document.createElement('tr');
     row.innerHTML = `
     <td>
@@ -102,9 +111,6 @@ function leerLocalStorage() {
     `;
     listaProductos.appendChild(row);
   });
-  row.innerHTML = `
-  <td>Total = $ ${suma}</td>
-  `;
   listaProductos.appendChild(row);
 }
 

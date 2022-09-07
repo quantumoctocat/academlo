@@ -1,0 +1,67 @@
+const cart = new Cart();
+
+//
+const products = Object.keys(cart.getProducts());
+
+for(var currentProduct; currentProduct < products.length; currentProduct++){
+  console.log(products[currentProduct]);
+}
+//
+
+function Cart(){
+  const productListing = {};
+  this.totalPrice = 0;
+
+  loadLocalStorage();
+ 
+  this.getProducts(){
+    return productListing;
+  }
+  
+  this.addProduct = function(id, name, price, image){
+    const product = {};
+    let quantity = 1;
+
+    if(!productListing.hasOwnProperty(id)){
+	    productListing[id] = product;
+    }else{
+      quantity += productListing[id].quantity;
+    }
+    
+    product.name = name;
+    product.price = price;
+    product.image = image;
+    product.quantity = quantity;
+    
+    productListing[id] = product;
+    
+    sumTotal();
+    saveLocalStorage();
+  }
+  
+  this.removeProduct = function(id){
+    if(productListing[id].quantity > 1){
+      productListing[id].quantity--;
+    }else{
+      delete productListing id;
+    }
+    
+    sumTotal();
+    saveLocalStorage();
+  }
+  
+  function sumTotal(){
+    totalPrice = 0;
+    const products = Object.keys(productListing);
+
+    for(var currentProduct; currentProduct < products.length; currentProduct++){
+      totalPrice += products[currentProduct].price;
+    }
+  }
+  
+  function loadLocalStorage(){
+    // fill productListing
+  }
+  
+  function saveLocalStorage(){}
+}

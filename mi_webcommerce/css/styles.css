@@ -60,7 +60,7 @@ header {
   z-index: 100;
   background-color: #efefef;
   padding: 10px;
-  min-height: 400px;
+  min-height: 100px;
   min-width: 300px;
 }
 
